@@ -34,11 +34,11 @@ st.pyplot(fig_norm)
 """
 
 # 期待値と分散を指定
-lambda = st.sidebar.slider('ポアソン分布の期待値', min_value=0, max_value=30, step=1)
+lam = st.sidebar.slider('ポアソン分布の期待値', min_value=0, max_value=30, step=1)
 
 # ポアソン分布の描画
 x_2 = np.linspace(0, 30, 31)
-r = stats.poisson.pmf(x_2, lambda)
+r = stats.poisson.pmf(x_2, lam)
 
 fig_pois, ax2 = plt.subplots()
 ax2.bar(x_2, height=r, color='#00A968', label='poisson')
@@ -80,3 +80,4 @@ plt.xlabel('day')
 plt.ylabel('population')
 plt.legend(['Susceptible', 'Infectious', 'Removed'])
 st.pyplot(plt)
+
